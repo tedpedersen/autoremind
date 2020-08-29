@@ -10,15 +10,21 @@ body{
   background-color: #6ACAC9;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
-  opacity: .8;
 }
 .site-header a {
   color: #fff;
   transition: ease-in-out color .15s;
 }
+
 .site-header a:hover {
   color: #fff;
   text-decoration: none;
+}
+.site-header .dropdown-item{
+  color: #000;
+}
+.site-header .dropdown-item:hover{
+  color: #666;
 }
 .logo-text{
   font-size: 1em;

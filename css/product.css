@@ -107,3 +107,31 @@ footer{
 }
 
 .overflow-hidden { overflow: hidden; }
+
+/* cal view */
+.table{
+  background: #fff;
+}
+.badge-secondary,
+.badge-info{
+  margin: 0 auto;
+  padding: 20px;
+  display: block;
+  font-size: 20px;
+}
+.cal td{
+  text-align: center;
+}
+.btn-primary.btn-sm{
+  border-color: #2DABAB;
+  color: #fff !important;
+}
+.spacer{
+height: 20px;
+}
+.site-header .btn-group{
+margin-right: 50px;
+}
+.hide{
+display: none;
+}

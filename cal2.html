@@ -15,35 +15,6 @@
     <!-- Custom styles for this template -->
     <link href="css/product.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-    <style>
-        .table{
-            background: #fff;
-        }
-        .badge-secondary,
-        .badge-info{
-            margin: 0 auto;
-            padding: 20px;
-            display: block;
-            font-size: 20px;
-        }
-        .cal td{
-            text-align: center;
-        }
-        .btn-primary.btn-sm{
-            border-color: #2DABAB;
-            color: #fff !important;
-        }
-        .spacer{
-          height: 20px;
-        }
-        .site-header .btn-group{
-          margin-right: 50px;
-        }
-        .hide{
-          display: none;
-        }
-
-    </style>
   </head>
 
   <body>
@@ -60,8 +31,6 @@
             Ted Pedersen
           </button>
           <div class="dropdown-menu">
-            <a class="dropdown-item" data-toggle="modal" data-target="#createModal" href="#">Create Reminder</a>
-            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Logout</a>
           </div>
         </div>
@@ -93,7 +62,7 @@
             <td><span class="badge badge-info">AUG 30</span><br>5 Reminders <a class="btn btn-primary btn-sm">EDIT</a></td>
           </tr>
           <tr>
-            <td><span class="badge badge-info">AUG 31</span><br>17 Reminders <a class="btn btn-primary btn-sm">EDIT</a></td>
+            <td><span class="badge badge-info">AUG 31</span><br>17 <a class="btn btn-primary btn-sm">EDIT</a></td>
             <td><span class="badge badge-info">SEPT 1</span><br>12 Reminders <a class="btn btn-primary btn-sm">EDIT</a></td>
             <td><span class="badge badge-info">SEPT 2</span><br>2 Reminders <a class="btn btn-primary btn-sm">EDIT</a></td>
             <td><span class="badge badge-info">SEPT 3</span><br>8 Reminders <a class="btn btn-primary btn-sm">EDIT</a></td>
@@ -133,100 +102,8 @@
         </div>
       
     </footer>
-   <!-- Create Modal -->
-<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- edit/create Modal -->
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Reminders For ${datehere}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-          <button type="button" class="btn btn-secondary" id="demobut">ADD REMINDER</button>
-        </div>
-        <div class="spacer"></div>
-        <table class="table">
-          <thead>
-            <tr>
-        
-              <th scope="col">Client</th>
-              <th scope="col">Appt Time</th>
-              <th scope="col">Edit</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="hide" id="demorow">
-              <td> <div class="form-group">
-               
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Name">
-              </div></td>
-              <td><input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Time"></td>
-              <td><div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-               
-                <button type="button" class="btn btn-secondary">SAVE</button>
-              </div></td>
-            </tr>
-            <tr>
-              <td>${clientname}</td>
-              <td>${time}</td>
-              <td><div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-                <button type="button" class="btn btn-secondary">EDIT</button>
-                <button type="button" class="btn btn-secondary">DELETE</button>
-              </div></td>
-            </tr>
-            <tr>
-        
-              <td>${clientname}</td>
-              <td>${time}</td>
-              <td><div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-                <button type="button" class="btn btn-secondary">EDIT</button>
-                <button type="button" class="btn btn-secondary">DELETE</button>
-              </div></td>
-            </tr>
-            <tr>
-    
-              <td>${clientname}</td>
-              <td>${time}</td>
-              <td><div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-                <button type="button" class="btn btn-secondary">EDIT</button>
-                <button type="button" class="btn btn-secondary">DELETE</button>
-              </div></td>
-            </tr>
-          </tbody>
-        </table>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+
  
 
     <!-- Bootstrap core JavaScript
@@ -242,6 +119,8 @@
         text: 'Thumbnail'
       });
     </script>
+
+    <!-- model add remind row -->
     <script>
       $("#demobut").click(function(){
         $("#demorow").removeClass("hide");

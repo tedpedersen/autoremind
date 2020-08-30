@@ -1,0 +1,84 @@
+<nav class="site-header sticky-top py-1">
+    <div class="container-fluid d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 logo" href="#">
+            <img src="img/logo.png" height="21">&nbsp;&nbsp;&nbsp;<span class="logo-text">AUTOREMIND</span>
+        </a>
+    </div>
+</nav>
+
+<div class="hero position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Automate<br> <span id="typed" style="white-space:pre;"></span></h1>
+        <p class="lead font-weight-normal">Easily remind your clients of upcoming appointments.</p>
+
+        <div id="typed-strings">
+            <p>Reminders</p>
+            <p>Bookings</p>
+            <p>Cancellations</p>
+        </div>
+        <a class="btn btn-outline-secondary" href="#" data-toggle="modal"
+            data-target="#exampleModalCenter">Login/Register</a>
+    </div>
+    <!-- <div class="product-device box-shadow d-none d-md-block"></div>
+      <div class="product-device product-device-2 box-shadow d-none d-md-block"></div> -->
+</div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+    <div style="background-color: #2DABAB"
+        class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">SMS & Google Calendar Intergration</h2>
+            <p class="lead">Plug and play intergration with your current services.<br>Our SMS automatically reminds your
+                clients.</p>
+        </div>
+        <div class="bg-light box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+            <img src="img/sms.png" height="250" style="padding-top:50px">
+        </div>
+    </div>
+    <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5">Take Control Of Your Time</h2>
+            <p class="lead">Automate all client booking reminders and cancelations.<br>Never have a client cancel at the
+                last minute again.</p>
+        </div>
+        <div class="bg-dark box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+            <img src="img/time.png" height="250" style="padding-top:50px">
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">LOGIN/REGISTER</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="staticEmail" value="Enter your email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary"
+                    onclick="window.location.href='/autoremind/cal2.html'">Login</button>
+            </div>
+        </div>
+    </div>
+</div>

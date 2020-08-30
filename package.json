@@ -1,6 +1,7 @@
 {
   "name": "autoremind",
   "version": "1.0.0",
+
   "description": "Auto reminder app for doctor/dentist front office",
   "main": "server.js",
   "dependencies": {
@@ -12,7 +13,6 @@
     "sequelize": "^6.3.4",
     "twilio": "^3.49.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -21,13 +21,15 @@
     "type": "git",
     "url": "git+https://github.com/tedpedersen/autoremind.git"
   },
-  "keywords": [
-    "appointment"
-  ],
-  "author": "Mukul Sharma",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/tedpedersen/autoremind/issues"
   },
-  "homepage": "https://github.com/tedpedersen/autoremind#readme"
+  "homepage": "https://github.com/tedpedersen/autoremind#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "path": "^0.12.7"
+  }
 }

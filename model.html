@@ -1,0 +1,73 @@
+<!-- edit/create Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Reminders For ${datehere}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+            <button type="button" class="btn btn-secondary" id="demobut">ADD REMINDER</button>
+          </div>
+          <div class="spacer"></div>
+          <table class="table">
+            <thead>
+              <tr>
+          
+                <th scope="col">Client</th>
+                <th scope="col">Appt Time</th>
+                <th scope="col">Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hide" id="demorow">
+                <td> <div class="form-group">
+                 
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Name">
+                </div></td>
+                <td><input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Time"></td>
+                <td><div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+                 
+                  <button type="button" class="btn btn-secondary">SAVE</button>
+                </div></td>
+              </tr>
+              <tr>
+                <td>${clientname}</td>
+                <td>${time}</td>
+                <td><div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+                  <button type="button" class="btn btn-secondary">EDIT</button>
+                  <button type="button" class="btn btn-secondary">DELETE</button>
+                </div></td>
+              </tr>
+              <tr>
+          
+                <td>${clientname}</td>
+                <td>${time}</td>
+                <td><div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+                  <button type="button" class="btn btn-secondary">EDIT</button>
+                  <button type="button" class="btn btn-secondary">DELETE</button>
+                </div></td>
+              </tr>
+              <tr>
+      
+                <td>${clientname}</td>
+                <td>${time}</td>
+                <td><div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+                  <button type="button" class="btn btn-secondary">EDIT</button>
+                  <button type="button" class="btn btn-secondary">DELETE</button>
+                </div></td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

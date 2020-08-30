@@ -2,7 +2,7 @@ const express = require('express');
 const helpers = require('./utils/helpers')
 const exphbs = require('express-handlebars');
 const path = require('path');
-const routes = require('./controllers');
+// const routes = require('./controllers');
 
 const hbs = exphbs.create({ helpers });
 const routes = require('./routes');

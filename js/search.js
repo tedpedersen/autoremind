@@ -31,7 +31,7 @@ var substringMatcher = function(strs) {
     'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
   ];
   
-  $('#the-basics .typeahead').typeahead({
+  $('#search').typeahead({
     hint: true,
     highlight: true,
     minLength: 1

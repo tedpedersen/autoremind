@@ -135,3 +135,20 @@ margin-right: 50px;
 .hide{
 display: none;
 }
+
+/* searchbar typeahead */
+.tt-menu{
+  background: #fff;
+  width: 100%;
+}
+.tt-suggestion{
+  padding: 1px 10px;
+  color: #666;
+}
+.tt-cursor{
+  background-color: #2DABAB;
+  color: #fff;
+}
+.tt-highlight{
+  color: #000;
+}

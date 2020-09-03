@@ -53,10 +53,12 @@ $("#saveNewAppointmentBtn").click(function () {
             </td>
         </tr>`).insertAfter("#newAppointment");
         addEditButtonClickListener();
+        addSaveButtonClickListener();
+        addCancelButtonClickListener();
     })
 });
 
-//Edit Button on click
+//Edit Button onclick
 const addEditButtonClickListener = () => {
     $(".edit-appt-button").click(function () {
         $(this).addClass("hide");
@@ -69,7 +71,7 @@ const addEditButtonClickListener = () => {
 };
 addEditButtonClickListener();
 
-//Save Button on click
+//Save Button onclick
 const addSaveButtonClickListener = () => {
     $(".save-edit-appt-button").click(function () {
         $(this).siblings(".edit-appt-button").removeClass("hide");
@@ -82,7 +84,7 @@ const addSaveButtonClickListener = () => {
 };
 addSaveButtonClickListener();
 
-//Cancel Button on click
+//Cancel Button onclick
 const addCancelButtonClickListener = () => {
     $(".cancel-edit-appt-button").click(function () {
         $(this).siblings(".edit-appt-button").removeClass("hide");

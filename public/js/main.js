@@ -1,4 +1,3 @@
-
 let selectDate = '';
 
 $(".edit-button").click(function () {
@@ -38,11 +37,9 @@ $("#saveNewAppointmentBtn").click(function () {
         //clear when submitted
         $('#clientNameInput, #clientTimeInput').val("");
         $("#newAppointment").addClass("hide");
-
         $(`<tr>
             <td>${clientName}</td>
             <td>${clientTime}</td>
-
             <td>
                 <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                     <button type="button" class="btn btn-secondary edit-appt-button">EDIT</button>

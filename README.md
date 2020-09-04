@@ -10,13 +10,16 @@ An application to remind clients of their scheduled appointment times. Reminders
 * Twillo 
 * Google Calendar
 
-## Screenshot:
+## Screenshots:
+* Automate Reminders Homepage
 ![Automate Reminders Homepage](./images/autoremind.png)
+
+* Automate Reminders Layout
 ![Automate Reminders Responsive](./images/autoremind-responsive.png)
 
 ## Links:
-Heroku: https://autoremind.herokuapp.com/
-Github: https://tedpedersen.github.io/autoremind/
+* Heroku: https://autoremind.herokuapp.com/
+* Github: https://tedpedersen.github.io/autoremind/
 
 ### Built by:
 Ted Pedersen, Mukul Sharma, Osborn Roxas, and Jessica Lam

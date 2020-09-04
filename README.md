@@ -1,2 +1,22 @@
-# virtual-reminder
-A app to help professionals remind their clients of appointments
+# Automate Reminders
+An application to remind clients of their scheduled appointment times. Reminders will be sent out 24-hours prior via SMS. 
+
+## Built With:
+* HTML
+* CSS
+* Node 
+* Bootstrap 
+* Handlebars
+* Twillo 
+* Google Calendar
+
+## Screenshot:
+![Automate Reminders Homepage](./images/autoremind.png)
+![Automate Reminders Responsive](./images/autoremind-responsive.png)
+
+## Links:
+Heroku: https://autoremind.herokuapp.com/
+Github: https://tedpedersen.github.io/autoremind/
+
+### Built by:
+Ted Pedersen, Mukul Sharma, Osborn Roxas, and Jessica Lam

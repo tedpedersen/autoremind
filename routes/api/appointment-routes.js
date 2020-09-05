@@ -1,39 +1,61 @@
+
 const router = require('express').Router()
-const db = require('../../models')
+// const db = require('../../models')
+
+const appointments = []
 
 // GET /api/appointments
 router.get('/', (req, res) => {
-  console.log(req.body)
-  res.json('Get all appointments')
+  res.json(appointments)
 })
 
 // GET /api/appointments/:id
 router.get('/:id', (req, res) => {
-  console.log(req.body)
-  res.json(`Get appointment id ${req.param.id}`)
+  var findAppointment = appointments.find(function (appointment) {
+    return appointment.id === req.params.id
+  });
+  if (findAppointment) {
+    console.log('Appointment found');
+    res.json(findAppointment)
+  } else {
+    res.status(400).send('Can not find appointment')
+  }
 })
 
 // POST /api/appointments
 router.post('/', (req, res) => {
-  console.log(req.body)
-  console.log('Creating an appointment')
-  db.Appointment.create(req.body).then(dbAppointmentSchema => {
-    res.json(dbAppointmentSchema)
-  })
+  appointments.push(req.body)
+  res.json(appointments)
+  // db.Appointment.create(req.body).then(dbAppointmentSchema => {
+  //   res.json(dbAppointmentSchema)
+  // })
 })
 
 // PUT /api/appointments/:id
 router.put('/:id', (req, res) => {
-  console.log("updating an appointment")
+  var findAppointmentIndex = appointments.findIndex(function (appointment) {
+    return appointment.id === req.params.id
+  });
+  if (findAppointmentIndex > -1) {
+    appointments[findAppointmentIndex] = req.body
+    res.json(appointments[findAppointmentIndex])
+  } else {
+    res.status(400).send('Can not find appointment')
+  }
 })
 
 // DELETE /api/appointments/:id
 router.delete('/:id', (req, res) => {
-  console.log(req.body)
-  console.log('Deleting an appointment')
+  var findAppointmentIndex = appointments.findIndex(function (appointment) {
+    return appointment.id === req.params.id
+  });
+  if (findAppointmentIndex > -1) {
+    appointments.splice(findAppointmentIndex, 1)
+    res.json(appointments)
+  } else {
+    res.status(400).send('Can not find appointment')
+  }
 })
 
-//Change routes to this --> api/appointments/:month/:id
-//we only want 1 month of data
 
 module.exports = router

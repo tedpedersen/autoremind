@@ -63,6 +63,26 @@ AppointmentSchema.getAppointments = function (callback) {
           console.log(`Message sent to ${masked}`)
         }
       })
+      appointment
+        .update(
+          {
+            notification: -1
+          },
+          {
+            where: {
+              name: appointment.id
+            }
+          }
+        )
+        .then(appnt => {
+          if (!appnt) {
+            res.status(404).json({ message: 'no appnt with that name' })
+            return
+          }
+        })
+        .catch(err => {
+          console.log(err)
+        })
     })
 
     // Don't wait on success/failure, just indicate all messages have been
@@ -74,24 +94,23 @@ AppointmentSchema.getAppointments = function (callback) {
 }
 
 const requiresNotification = function (appointment, date) {
-  // let appntTime = moment(appointment.time).utc()
-  // let sTime = moment(date).utc()
-  // let diff = moment.duration(appntTime.diff(sTime)).asHours()
-  // console.log(`requires notification appntTime: ${appntTime}`)
-  // console.log(`requires notification sTime: ${sTime}`)
-  // console.log(`requires notification diff: ${diff}`)
+  let appntTime = moment(appointment.time).utc()
+  let sTime = moment(date).utc()
+  let diff = moment.duration(appntTime.diff(sTime)).asHours()
+  console.log(`requires notification appntTime: ${appntTime}`)
+  console.log(`requires notification sTime: ${sTime}`)
+  console.log(`requires notification diff: ${diff}`)
 
-  return (
-    Math.round(
-      moment
-        .duration(
-          moment(appointment.time)
-            .utc()
-            .diff(moment(date).utc())
-        )
-        .asHours()
-    ) <= appointment.notification
+  let timeDiff = Math.round(
+    moment
+      .duration(
+        moment(appointment.time)
+          .utc()
+          .diff(moment(date).utc())
+      )
+      .asHours()
   )
+  return timeDiff >= 1 && timeDiff <= appointment.notification
 }
 
 AppointmentSchema.init(

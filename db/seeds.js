@@ -3,11 +3,11 @@ const { Appointment } = require('../models')
 Appointment.bulkCreate([
   {
     id: 1,
-    name: 'MukulS',
-    phoneNumber: '+14085949964',
+    name: 'JohnDoe',
+    phoneNumber: '+14081231234',
     notification: 24,
     timeZone: 'America/Los_Angeles|PST PDT',
-    time: '2020-09-04 10:00:00'
+    time: '2020-09-07 10:00:00'
   }
 ])
   .then(apt => {

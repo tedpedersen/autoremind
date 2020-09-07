@@ -11,15 +11,18 @@ router.get('/', (req, res) => {
     })
     .catch(err => {
       console.log(err)
+      res.status(400).send({
+        error: err
+      })
     })
 })
 
-// GET /api/appointments/:name
-router.get('/:name', (req, res) => {
-  console.log('GET /api/appointments/:name')
-  const name = req.params.name
+// GET /api/appointments/:id
+router.get('/:id', (req, res) => {
+  console.log('GET /api/appointments/:id')
+  const id = req.params.id
   Appointment.findOne({
-    where: { name: name }
+    where: { id: id }
   })
     .then(app => {
       console.log('anything', app)
@@ -27,11 +30,14 @@ router.get('/:name', (req, res) => {
     })
     .catch(err => {
       console.log(err)
+      res.status(400).send({
+        error: err
+      })
     })
 })
 
 // POST /api/appointments
-router.post('/api/appointments', (req, res) => {
+router.post('/', (req, res) => {
   console.log(req.body)
   Appointment.create(req.body)
     .then(app => {
@@ -40,19 +46,48 @@ router.post('/api/appointments', (req, res) => {
     })
     .catch(err => {
       console.log(err)
+      res.status(400).send({
+        error: err
+      })
     })
 })
 
-// PUT /api/appointments ? Do we need it ?
-router.put('/:id', (req, res) => {})
+// PUT /api/appointments/:id = updates
+router.put('/:id', (req, res) => {
+  console.log(req.body)
+  const id = req.params.id
+  Appointment.findOne({ where: { id: id } })
+    .then(appointment => {
+      console.log(appointment);
+      appointment.update(req.body)
+        .then(updatedAppointment => {
+          console.log('PUT /api/appointments', updatedAppointment)
+          res.json(updatedAppointment)
+        })
+        .catch(err => {
+          res.status(400).send({
+            error: err
+          })
+        })
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(400).send({
+        error: err
+      })
+    })
+})
 
 // DELETE /api/appointments/:id
 router.delete('/:id', (req, res) => {
   console.log(req.body)
-  Appointment.destroy(req.body)
+  const id = req.params.id
+  Appointment.destroy({
+    where: { id: id }
+  })
     .then(app => {
       console.log('delete successfully')
-      res.status(200).send({ message: 'Succesffully deleted' })
+      res.status(200).send({ message: 'Successfully deleted' })
     })
     .catch(err => {
       console.log(err)

@@ -115,10 +115,14 @@ const requiresNotification = function (appointment, date) {
 
 AppointmentSchema.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+  },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,
       validate: {
         len: [1]
       }

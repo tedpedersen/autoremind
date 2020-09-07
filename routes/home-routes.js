@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const { Appointment } = require('../models')
 
 router.get('/', (req, res) => {
   console.log(req.session)
@@ -12,10 +13,28 @@ router.get('/', (req, res) => {
 router.get('/calendar', (req, res) => {
   console.log(req.session)
 
-  res.render('calendar', {
-    //comes from views folder
-    success: true
-  })
+  //get all Appointment
+  Appointment.findAll({})
+    .then(allAppointments => {
+      console.log('anything', allAppointments)
+      const dateAppointments = {}
+      allAppointments.forEach(function (appointment) {
+        console.log(appointment.time);
+        var appointmentDate = `SEPT${appointment.time.getDate()}`
+        if (!dateAppointments[appointmentDate]) {
+          dateAppointments[appointmentDate] = []
+        }
+        dateAppointments[appointmentDate].push(appointment)
+      })
+
+      res.render('calendar', {
+        dateAppointments,
+        totalCount: allAppointments.length
+      })
+    })
+    .catch(err => {
+      console.log(err)
+    });
 })
 
 //login route

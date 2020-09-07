@@ -16,28 +16,28 @@ $("#addReminder").click(function () {
     // console.log(selectDate);
 });
 
-$("#saveNewAppointmentBtn").click(function () {
-    const clientName = $('#clientNameInput').val();
-    const clientTime = $('#clientTimeInput').val();
-    console.log(clientName, clientTime);
+    $("#saveNewAppointmentBtn").click(function () {
+        const clientName = $('#clientNameInput').val();
+        const clientTime = $('#clientTimeInput').val();
+        console.log(clientName, clientTime);
 
-    fetch('http://localhost:3001/api/appointments', {
-        method: 'post',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name: clientName,
-            time: clientTime,
-            date: selectDate,
-            id: Date.now()
-        })
-    }).then(res => res.text()).then(res => {
-        console.log(res);
-        //clear when submitted
-        $('#clientNameInput, #clientTimeInput').val("");
-        $("#newAppointment").addClass("hide");
-        $(`<tr>
+        fetch('http://localhost:3001/api/appointments', {
+            method: 'post',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: clientName,
+                time: clientTime,
+                date: selectDate,
+                id: Date.now()
+            })
+        }).then(res => res.text()).then(res => {
+            console.log(res);
+            //clear when submitted
+            $('#clientNameInput, #clientTimeInput').val("");
+            $("#newAppointment").addClass("hide");
+            $(`<tr>
             <td>${clientName}</td>
             <td>${clientTime}</td>
             <td>
@@ -49,11 +49,11 @@ $("#saveNewAppointmentBtn").click(function () {
                 </div>
             </td>
         </tr>`).insertAfter("#newAppointment");
-        addEditButtonClickListener();
-        addSaveButtonClickListener();
-        addCancelButtonClickListener();
-    })
-});
+            addEditButtonClickListener();
+            addSaveButtonClickListener();
+            addCancelButtonClickListener();
+        })
+    });
 
 //Edit Button onclick
 const addEditButtonClickListener = () => {
@@ -93,3 +93,10 @@ const addCancelButtonClickListener = () => {
     });
 };
 addCancelButtonClickListener();
+
+
+//when I click on edit on specific add reminder i can do two things
+
+//1. change name and time then hit save for new inputs
+
+//2. when I hit delete i erase entry

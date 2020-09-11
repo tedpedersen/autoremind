@@ -18,7 +18,7 @@ router.get('/calendar', (req, res) => {
     .then(allAppointments => {
       console.log('anything', allAppointments)
       const dateAppointments = {}
-      allAppointments.forEach(function (appointment) {
+      allAppointments.filter(x => x.time).forEach(function (appointment) {
         console.log(appointment.time);
         var appointmentDate = `SEPT${appointment.time.getDate()}`
         if (!dateAppointments[appointmentDate]) {

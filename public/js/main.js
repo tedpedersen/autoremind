@@ -1,7 +1,7 @@
 let selectDate = ''; // 'SEPT 12'
 let dateAppointments = {}
 function getAllAppointments() {
-    fetch('http://localhost:3001/api/appointments').then(res => res.json()).then((allAppointments) => {
+    fetch('/api/appointments').then(res => res.json()).then((allAppointments) => {
         allAppointments.forEach(function (appointment) {
             appointment.time = new Date(appointment.time)
             console.log(appointment.time);
@@ -64,7 +64,7 @@ $("#saveNewAppointmentBtn").click(function () {
     const clientDay = selectDate.split(/\s+/)[1];
     console.log(clientName, clientTime, clientDay);
 
-    fetch('http://localhost:3001/api/appointments', {
+    fetch('/api/appointments', {
         method: 'post',
         headers: {
             "Content-Type": "application/json"
@@ -139,7 +139,7 @@ const addSaveButtonClickListener = () => {
         console.log(clientName, clientTime, clientDay);
 
         const id = $(this).parents().eq(1).siblings().find('.client-name').attr('id')
-        fetch(`http://localhost:3001/api/appointments/${id}`, {
+        fetch(`/api/appointments/${id}`, {
             method: 'put',
             headers: {
                 "Content-Type": "application/json"
@@ -188,7 +188,7 @@ addCancelButtonClickListener();
 const deleteButton = () => {
     $(".delete-appt-button").click(function () {
         const id = $(this).parents().eq(1).siblings().find('.client-name').attr('id')
-        fetch(`http://localhost:3001/api/appointments/${id}`, {
+        fetch(`/api/appointments/${id}`, {
             method: 'delete'
         }).then(res => res.json()).then(res => {
             $(this).parents().eq(2).remove();

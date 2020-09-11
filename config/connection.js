@@ -3,15 +3,21 @@ const Sequelize = require('sequelize')
 require('dotenv').config()
 
 // create connection to our db
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PW,
-  {
-    host: 'ec2-3-215-207-12.compute-1.amazonaws.com',
-    dialect: 'mysql',
-    port: 5432
-  }
-)
+let sequelize
+if (process.env.DATABASE_URL) {
+  sequelize = new Sequelize(process.env.DATABASE_URL);
+} else {
+  sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PW,
+    {
+      host: 'localhost',
+      dialect: 'mysql',
+      port: 3306
+    }
+  )
+}
+
 
 module.exports = sequelize

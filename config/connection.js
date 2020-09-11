@@ -8,9 +8,9 @@ const sequelize = new Sequelize(
   process.env.DB_USER,
   process.env.DB_PW,
   {
-    host: 'localhost',
+    host: 'ec2-3-215-207-12.compute-1.amazonaws.com',
     dialect: 'mysql',
-    port: 3306
+    port: 5432
   }
 )
 

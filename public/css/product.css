@@ -152,3 +152,24 @@ display: none;
 .tt-highlight{
   color: #000;
 }
+
+@media only screen and (max-width: 800px) {
+  body{
+    font-size: .5em;
+  }
+  input,
+  .btn{
+    font-size: .5em !important;
+  }
+  .badge-secondary,
+  .badge-info{
+    margin: 0 auto;
+    padding: 5px;
+    display: block;
+    font-size: 2vh;
+  }
+  .table td, .table th{
+    padding: 0;
+  }
+  
+}
